@@ -1,0 +1,210 @@
+/* General styling for the body */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+/* Styling for the header */
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+/* Styling for the form */
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+/* Styling for the search input */
+#search-input,
+#orientation-filter,
+#color-filter {
+    width: 200px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #333;
+}
+
+#search-input:focus,
+#orientation-filter:focus,
+#color-filter:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+/* Styling for the search button */
+#search-button, #clear-button {
+    width: 120px;  
+    height: 40px;  
+    font-size: 16px;  
+    padding: 10px 20px;  
+    background-color: #4CAF50;  
+    color: white;  
+    border: none;  
+    border-radius: 5px;  
+    cursor: pointer;  
+}
+
+#search-button:hover,
+#clear-button:hover {
+    background-color: #45a049;  
+}
+
+/* Styling for the search results container */
+.search-results {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;  
+}
+
+/* Styling for individual search result */
+.search-result {
+    display: flex;
+    flex-direction: column;  
+    align-items: center;  
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 250px;  
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.search-result:hover {
+    transform: scale(1.1);  
+}
+
+/* Styling for images in search result */
+.search-result img {
+    width: 100%;
+    height: auto;  
+    max-height: 200px;  
+    display: block;
+    transition: opacity 0.2s ease-in-out;
+}
+.search-result:hover img {
+    opacity: 0.8;
+}
+
+/* Styling for links in search result */
+.search-result a {
+    text-align: start;
+    align-self: flex-start;  
+    width: 100%;  
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+    background-color: #f9f9f9;
+    box-sizing: border-box;  
+    text-transform: capitalize;
+}
+
+.search-result a:hover {
+    background-color: #f1f1f1;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal Content (image) */
+.modal-content {
+    max-width: 80%;
+    max-height: 70vh; /* Limit height to ensure space for the download button */
+    object-fit: contain; /* Ensure the image scales properly within its container */
+    margin-bottom: 20px; /* Add space between the image and the download button */
+}
+
+/* Caption of Modal Image */
+#modal-caption {
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    max-width: 80%;
+    word-wrap: break-word;
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Styling for the download button */
+#download-button {
+    display: block;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#download-button:hover {
+    background-color: #45a049;
+}
+
+/* Ensure the modal content (image and button) does not exceed the screen */
+.modal-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-height: 100%; /* Ensure content does not exceed the modal height */
+    max-width: 100%; /* Ensure content does not exceed the modal width */
+    overflow: hidden; /* Prevent overflow */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 600px) {
+    .modal-content {
+        max-width: 100%;
+        max-height: 60vh;
+    }
+
+    #download-button {
+        width: 90%; /* Make the button width responsive */
+    }
+}
